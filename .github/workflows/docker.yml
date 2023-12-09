@@ -43,7 +43,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            cdf5/one-api-pandora
+            Eguuuuuuuuuuuuuu/pandoranext-tokenstool
             ghcr.io/${{ github.repository }}
 
       - name: Build and push Docker images
