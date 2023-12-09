@@ -241,7 +241,7 @@ public class apiController {
             systemSetting systemSetting = systemService.selectSetting();
             String bingUrl = systemSetting.getBing();
             String[] parts = bingUrl.split(":");
-            String baseUrlWithoutPath = "http://" + externalIP + ":" + parts[1] + "/" +systemSetting.getProxy_api_prefix();
+            String baseUrlWithoutPath = externalIP + "/" +systemSetting.getProxy_api_prefix();
 
             if (parts.length != 2) {
                 return Result.error("bind填写有误，无法提取port");
