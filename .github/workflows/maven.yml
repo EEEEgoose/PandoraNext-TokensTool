@@ -30,7 +30,7 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn -B package --/rearServer/pom.xml
+      run: mvn -B package --file /rearServer/pom.xml
 
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
