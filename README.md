@@ -41,12 +41,12 @@ services:
     volumes:
       - （你config.json的文件目录）:/data
       - /var/run/docker.sock:/var/run/docker.sock
-    environment: 
-      - deployWay=docker
-      - deployPosition=（你config.json的文件目录）
-      - hotReload="true"
-      - server.port=8081
-      - pandoara_Ip=https://XXX.XXX
+    command:
+      - --deployWay=docker
+      - --deployPosition=/data
+      - --hotReload="true"
+      - --server.port=8081
+      - --pandoara_Ip=https://XXX.XXX
 
 networks:
   pandora_network:
