@@ -20,12 +20,12 @@ WORKDIR /app
 EXPOSE 8081
 
 #声明环境变量
-ENV pandoara_Ip=""
-ENV deployWay="docker"
-ENV deployPosition=""
-ENV port="8081"
-ENV hotReload="true"
+#ENV pandoara_Ip=""
+#ENV deployWay="docker"
+#ENV deployPosition=""
+#ENV port="8081"
+#ENV hotReload="true"
 
 #指定docker容器启动时运行jar包
-ENTRYPOINT ["java","-jar","app.jar","--server.port=${port}","--deployWay=${deployWay}", "--deployPosition=${deployPosition}","--hotReload=${hotReload}", "--pandoara_Ip=${pandoara_Ip}"]
-
+#ENTRYPOINT ["java","-jar","app.jar","--server.port=${port}","--deployWay=${deployWay}", "--deployPosition=${deployPosition}","--hotReload=${hotReload}", "--pandoara_Ip=${pandoara_Ip}"]
+ENTRYPOINT ["java","-jar","app.jar"]
