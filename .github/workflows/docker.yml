@@ -1,3 +1,4 @@
+# AMD64 only
 name: Publish Docker image (amd64)
 
 on:
