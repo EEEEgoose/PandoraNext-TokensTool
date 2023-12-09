@@ -6,13 +6,19 @@
 pandoara_Ip值可用域名代替
 
 
+### 拉取镜像
+```
+docker pull ghcr.io/eeeegoose/pandoranext-tokenstool:latest
+```
+
+
 ### Docker Compose部署详情
 ## 代码模板
 ```
 version: '3'
 services:
   tokensTool:
-    image: yangclivia/tokenstool:latest
+    image: ghcr.io/eeeegoose/pandoranext-tokenstool:latest
     container_name: tokensTool
     restart: always
     user: root
@@ -22,12 +28,12 @@ services:
     volumes:
       - （你config.json的文件目录）:/data
       - /var/run/docker.sock:/var/run/docker.sock
-    command: 
-      - --deployWay=(部署方式看环境变量)
-      - --deployPosition=/data
-      - --hotReload=true
-      - --server.port=8081
-      - --pandoara_Ip=你的Pandoara部署的服务器外网Ip Or default
+    environment: 
+      - deployWay=docker
+      - deployPosition=（你config.json的文件目录）
+      - hotReload="true"
+      - server.port=8081
+      - pandoara_Ip=https://XXX.XXX
 ```
 
 
