@@ -12,10 +12,23 @@ docker pull ghcr.io/eeeegoose/pandoranext-tokenstool:latest
 ```
 
 
-### Docker Compose部署详情
+### Docker Compose部署详情 一键部署pandora-next和Tokenstool
 ## 代码模板
 ```
 version: '3'
+services:
+  pandora-next:
+    image: pengzhile/pandora-next:latest
+    container_name: PandoraNext
+    networks:
+      - pandora_network
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/data
+      - ./sessions:/root/.cache/PandoraNext
+
 services:
   tokensTool:
     image: ghcr.io/eeeegoose/pandoranext-tokenstool:latest
@@ -34,6 +47,10 @@ services:
       - hotReload="true"
       - server.port=8081
       - pandoara_Ip=https://XXX.XXX
+
+networks:
+  pandora_network:
+    driver: bridge
 ```
 
 
